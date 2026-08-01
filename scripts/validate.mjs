@@ -8,7 +8,7 @@ const requiredCopy = [
   'Catch the launch blockers your own eyes stopped seeing.',
   'Twelve normal-user checks',
   'No security testing',
-  '50% Gumroad commission deposit',
+  '50% commission deposit',
   'Illustrative sample using a fictional product',
 ];
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mshafei721.github.io/twelvecheck/sitemap.xml
