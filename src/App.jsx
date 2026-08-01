@@ -210,7 +210,7 @@ export default function App() {
               <ol className="timeline">
                 {timeline.map(([time, label, alert]) => <li className={alert ? 'timeline-alert' : ''} key={time}><time>{time}</time><span>{label}</span></li>)}
               </ol>
-              <a className="text-link" href="/twelvecheck-sample-proof-pack.html" target="_blank" rel="noreferrer">Open printable sample proof pack ↗</a>
+              <a className="text-link" href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`} target="_blank" rel="noreferrer">Open printable sample proof pack ↗</a>
             </article>
           </div>
         </section>
