@@ -2,6 +2,12 @@
 
 TwelveCheck is a productized, human public-build launch review for SaaS founders launching within 72 hours. The offer is deliberately narrow: twelve normal-user checks, timestamped evidence, P0/P1/P2 findings, and a short walkthrough for $89.
 
+**Live offer:** https://mshafei721.github.io/twelvecheck/
+
+**Request a launch slot:** https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
+
+The public fallback takes no payment. A 50% deposit is due only after scope acceptance; the site says this explicitly.
+
 This folder is the operating source of truth for the business. It contains the public landing page, a clearly synthetic sample proof pack, the fulfillment checklist, research ledger, and demand-test operating notes.
 
 ## Run locally
