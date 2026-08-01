@@ -128,7 +128,7 @@ export default function App() {
     }
     localStorage.setItem('twelvecheck-intake', JSON.stringify(form));
     if (!CHECKOUT_URL) {
-      setStatus('Intake validated. Opening a public GitHub slot request; include public information only. No payment is taken until scope acceptance.');
+      setStatus('Intake validated. Opening a public GitHub slot request. If GitHub sign-in blocks you and you came from an email, reply to that message with these details instead. No payment is taken until scope acceptance.');
       window.open(buildPrefilledReservationUrl(form), '_blank', 'noopener,noreferrer');
       return;
     }
@@ -261,7 +261,7 @@ export default function App() {
               </label>
               <button className="button button-primary" type="submit">{CHECKOUT_URL ? 'Continue to checkout — $44.50 deposit' : 'Request a slot — no payment yet'}</button>
               {status && <p className="form-status" role="status">{status}</p>}
-              {!CHECKOUT_URL && <p className="form-privacy">Fallback requests open as public GitHub issues. Include public-build information only—never credentials, private URLs, customer data, or secrets.</p>}
+              {!CHECKOUT_URL && <p className="form-privacy">Fallback requests open as public GitHub issues. If you arrived from an outreach email, you can reply to it with the three fields above—no GitHub account needed. Include public-build information only—never credentials, private URLs, customer data, or secrets.</p>}
             </form>
 
             <article className="about-column">
