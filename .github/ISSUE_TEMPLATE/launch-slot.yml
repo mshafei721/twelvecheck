@@ -1,0 +1,44 @@
+name: Request a TwelveCheck launch slot
+description: Public-build launch review request. Do not include credentials, private URLs, customer data, or secrets.
+title: "Launch slot request: "
+labels:
+  - launch-slot
+body:
+  - type: markdown
+    attributes:
+      value: |
+        TwelveCheck reviews ordinary public-user flows only. This request is public. Include public information only—never credentials, private URLs, customer data, or secrets. No payment is due until the scope is accepted.
+  - type: input
+    id: public-url
+    attributes:
+      label: Public build URL
+      description: Must be accessible without login.
+      placeholder: https://your-app.com
+    validations:
+      required: true
+  - type: input
+    id: launch-time
+    attributes:
+      label: Planned launch time (UTC)
+      description: TwelveCheck is intended for launches within 72 hours.
+      placeholder: 04 Aug 2026 14:00 UTC
+    validations:
+      required: true
+  - type: textarea
+    id: journeys
+    attributes:
+      label: Three critical public journeys
+      description: One journey per line. Keep every step within ordinary public use.
+      placeholder: |
+        1. Visit pricing → start signup
+        2. Create first workspace
+        3. Complete first key action
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope confirmation
+      options:
+        - label: I understand this is normal-user observation, not security testing, penetration testing, certification, or a guarantee.
+          required: true
