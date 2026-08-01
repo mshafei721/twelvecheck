@@ -17,5 +17,6 @@ if (missing.length) throw new Error(`Missing required copy: ${missing.join(', ')
 if (!css.includes('@media (max-width: 720px)')) throw new Error('Mobile breakpoint missing');
 if (!app.includes('aria-expanded')) throw new Error('FAQ accessibility state missing');
 if (!app.includes('localStorage.setItem')) throw new Error('Intake persistence missing');
+if (!app.includes('buildPrefilledReservationUrl')) throw new Error('Prefilled reservation handoff missing');
 
 console.log('TwelveCheck validation passed: required copy, scope disclosure, mobile breakpoint, FAQ state, and intake persistence present.');

@@ -3,6 +3,27 @@ import {useEffect, useState} from 'react';
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || '';
 const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request';
 
+function buildPrefilledReservationUrl(form) {
+  const requestUrl = new URL('https://github.com/mshafei721/twelvecheck/issues/new');
+  let publicHost = 'public build';
+  try { publicHost = new URL(form.url).hostname; } catch { /* browser validation handles malformed URLs */ }
+  requestUrl.searchParams.set('title', `Launch slot request: ${publicHost}`);
+  requestUrl.searchParams.set('body', [
+    '## Public build URL',
+    form.url,
+    '',
+    '## Planned launch time',
+    form.launch,
+    '',
+    '## Three critical public journeys',
+    form.journeys,
+    '',
+    '---',
+    'I understand this request is public and TwelveCheck is normal-user observation, not security testing, certification, or a guarantee.',
+  ].join('\n'));
+  return requestUrl.toString();
+}
+
 const checkGroups = [
   {
     title: 'First contact',
@@ -108,7 +129,7 @@ export default function App() {
     localStorage.setItem('twelvecheck-intake', JSON.stringify(form));
     if (!CHECKOUT_URL) {
       setStatus('Intake validated. Opening a public GitHub slot request; include public information only. No payment is taken until scope acceptance.');
-      window.open(RESERVATION_URL, '_blank', 'noopener,noreferrer');
+      window.open(buildPrefilledReservationUrl(form), '_blank', 'noopener,noreferrer');
       return;
     }
     setStatus('Intake saved on this device. Opening Gumroad commission checkout…');
