@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run check
         env:
-          VITE_CHECKOUT_URL: https://midoevanescence.gumroad.com/l/twelvecheck
+          VITE_CHECKOUT_URL: 'https://gumroad.com/checkout?product=yqcgy&quantity=1'
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
