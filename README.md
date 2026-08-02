@@ -6,6 +6,8 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Free 12-point SaaS launch checklist:** https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html
 
+**Downloadable 8-page field guide:** https://mshafei721.github.io/twelvecheck/twelvecheck-launch-checklist-carousel.pdf
+
 **Commission checkout:** https://midoevanescence.gumroad.com/l/twelvecheck
 
 **Mini review:** https://midoevanescence.gumroad.com/l/twelvecheck-mini
