@@ -11,6 +11,7 @@ const requiredCopy = [
   'Twelve normal-user checks',
   'No security testing',
   '$44.50 deposit',
+  'One journey. Four checks. Four hours.',
   'Illustrative sample using a fictional product',
 ];
 
@@ -23,6 +24,7 @@ if (!app.includes('buildPrefilledReservationUrl')) throw new Error('Prefilled re
 if (!app.includes('buildEmailReservationUrl')) throw new Error('Private email reservation handoff missing');
 if (!app.includes('journeyCount !== 3')) throw new Error('Exact three-journey validation missing');
 if (!app.includes('deposit confirms final scope and starts the 12-hour clock')) throw new Error('Payment and delivery-clock boundary missing');
+if (!app.includes('VITE_MINI_CHECKOUT_URL')) throw new Error('Mini-review checkout configuration missing');
 if (!checklist.includes('A 12-point SaaS launch checklist.')) throw new Error('Indexable launch checklist missing');
 if (!sitemap.includes('saas-launch-checklist.html')) throw new Error('Checklist missing from sitemap');
 

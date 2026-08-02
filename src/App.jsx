@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || '';
+const MINI_CHECKOUT_URL = import.meta.env.VITE_MINI_CHECKOUT_URL || 'https://midoevanescence.gumroad.com/l/twelvecheck-mini';
 const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new';
 const RESERVATION_EMAIL = import.meta.env.VITE_RESERVATION_EMAIL || 'evanescence.mido@gmail.com';
 
@@ -290,6 +291,18 @@ export default function App() {
 
         <section id="intake" className="numbered-section page-pad">
           <SectionHeading number="03">Three slots. One revision. No scope drift.</SectionHeading>
+          <article className="mini-offer" aria-labelledby="mini-offer-title">
+            <div>
+              <h3 id="mini-offer-title">One journey. Four checks. Four hours.</h3>
+              <p>Start with the narrowest paid proof: one public journey, timestamped findings, a 90-second walkthrough, and one focused retest.</p>
+            </div>
+            <div className="mini-price-block" aria-label="TwelveCheck Mini pricing">
+              <strong>$39</strong>
+              <span>$19.50 deposit today</span>
+            </div>
+            <a className="button button-primary" href={MINI_CHECKOUT_URL} target="_blank" rel="noreferrer">Choose the mini review</a>
+          </article>
+          <p className="mini-full-note">Need all three journeys checked? The full twelve-check review continues below.</p>
           <div className="offer-grid">
             <article className="price-column">
               <p className="price">$89</p>
