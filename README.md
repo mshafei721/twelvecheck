@@ -6,9 +6,9 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Free 12-point SaaS launch checklist:** https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html
 
-**Request a launch slot:** https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
+**Commission checkout:** https://midoevanescence.gumroad.com/l/twelvecheck
 
-The primary public fallback opens a private, prefilled email draft that the visitor must review and send. A public GitHub request remains available as an alternative. Neither route takes payment. After a fit check, the 50% deposit confirms final scope and starts the 12-hour clock.
+The production site validates and saves the three-journey intake in the visitor's browser, then opens the Gumroad commission checkout. Gumroad collects a 50% deposit ($44.50); the balance is charged after completion. The 12-hour clock starts only after deposit confirmation and final scope acceptance.
 
 This folder is the operating source of truth for the business. It contains the public landing page, a clearly synthetic sample proof pack, the fulfillment checklist, research ledger, and demand-test operating notes.
 
@@ -25,7 +25,7 @@ Production check:
 npm run check
 ```
 
-Set `VITE_CHECKOUT_URL` to the published Gumroad commission URL before deploying. Until then, set `VITE_RESERVATION_EMAIL` for private draft handoff and `VITE_RESERVATION_URL` for the public GitHub alternative. The intake form is saved only in the visitor's local browser.
+`VITE_CHECKOUT_URL` is set for the GitHub Pages build in `.github/workflows/pages.yml`. For an unconnected local build, `VITE_RESERVATION_EMAIL` provides the private draft handoff and `VITE_RESERVATION_URL` provides the public GitHub alternative. The intake form is saved only in the visitor's local browser.
 
 ## Current operating contract
 
