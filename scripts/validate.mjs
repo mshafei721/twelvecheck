@@ -17,6 +17,8 @@ const requiredCopy = [
   '$44.50 deposit',
   'One journey. Four checks. Four hours.',
   'Illustrative sample using a fictional product',
+  'get the full $9 off a Mini or Full human review',
+  'the buyer-only code arrives with the Kit',
 ];
 
 const missing = requiredCopy.filter((text) => !app.includes(text) && !sample.includes(text));

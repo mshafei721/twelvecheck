@@ -120,6 +120,8 @@ h1 { font-size: clamp(58px, 6.1vw, 104px); line-height: .98; letter-spacing: -4.
 .kit-price-block { padding: 0 0 22px; border-bottom: 2px solid #fff; }
 .kit-price-block strong { display: block; color: var(--orange); font-family: var(--display); font-size: clamp(74px, 7vw, 112px); line-height: .78; letter-spacing: -5px; }
 .kit-price-block span, .kit-buy small { display: block; font-size: 11px; font-weight: 800; line-height: 1.45; }
+.kit-buy .kit-credit { padding: 12px 0 12px 12px; border-left: 4px solid var(--orange); font-weight: 600; }
+.kit-credit strong { color: var(--orange); }
 .kit-buy .button { width: 100%; }
 .service-note { margin: 16px 0 0; color: var(--gray); font-size: 12px; }
 .mini-offer { display: grid; grid-template-columns: minmax(0, 1.35fr) auto minmax(240px, .55fr); gap: clamp(24px, 3vw, 46px); align-items: center; margin-top: 38px; padding: clamp(22px, 2.5vw, 34px); border: 2px solid var(--ink); background: var(--orange-wash); }

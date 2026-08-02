@@ -310,6 +310,7 @@ export default function App() {
             <div className="kit-buy">
               <div className="kit-price-block" aria-label="TwelveCheck Evidence Kit pricing"><strong>$9</strong><span>one-time · yours to reuse</span></div>
               <a className="button button-primary" href={KIT_URL} target="_blank" rel="noreferrer">Get the Evidence Kit</a>
+              <small className="kit-credit"><strong>Early-buyer credit:</strong> get the full $9 off a Mini or Full human review through 16 Aug 2026, 11:59 PM PDT. Three redemptions total; the buyer-only code arrives with the Kit.</small>
               <small>No account inside the workbook. No upload. No tracking.</small>
             </div>
           </article>
