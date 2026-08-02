@@ -5,11 +5,11 @@ TwelveCheck is a fixed-scope, human public-build launch review for SaaS founders
 ## Offer
 
 - Price: USD 89 total commission.
-- Turnaround: within 12 hours after scope acceptance.
+- Turnaround: within 12 hours after deposit confirmation and final scope acceptance.
 - Deliverables: twelve normal-user checks, timestamped evidence, P0/P1/P2 issue list, short walkthrough, and one scoped revision.
 - Inputs: a public URL, planned launch time, and three critical public journeys.
 - Exclusions: security testing, penetration testing, load testing, privileged access, certification, legal or compliance review, and guarantees.
-- Payment: no payment is due until the public scope is accepted.
+- Payment: the request is checked first; a USD 44.50 deposit then confirms final scope and starts the delivery clock. The website itself takes no payment.
 
 ## Public resources
 

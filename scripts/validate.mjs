@@ -10,7 +10,7 @@ const requiredCopy = [
   'Catch the launch blockers your own eyes stopped seeing.',
   'Twelve normal-user checks',
   'No security testing',
-  '50% commission deposit',
+  '$44.50 deposit',
   'Illustrative sample using a fictional product',
 ];
 
@@ -22,6 +22,7 @@ if (!app.includes('localStorage.setItem')) throw new Error('Intake persistence m
 if (!app.includes('buildPrefilledReservationUrl')) throw new Error('Prefilled reservation handoff missing');
 if (!app.includes('buildEmailReservationUrl')) throw new Error('Private email reservation handoff missing');
 if (!app.includes('journeyCount !== 3')) throw new Error('Exact three-journey validation missing');
+if (!app.includes('deposit confirms final scope and starts the 12-hour clock')) throw new Error('Payment and delivery-clock boundary missing');
 if (!checklist.includes('A 12-point SaaS launch checklist.')) throw new Error('Indexable launch checklist missing');
 if (!sitemap.includes('saas-launch-checklist.html')) throw new Error('Checklist missing from sitemap');
 

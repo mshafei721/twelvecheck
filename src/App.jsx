@@ -44,7 +44,7 @@ function buildEmailReservationUrl(form) {
     'Three critical public journeys',
     form.journeys,
     '',
-    'I understand this is normal-user observation, not security testing, certification, or a guarantee. No payment is due until scope acceptance.',
+    'I understand this is normal-user observation, not security testing, certification, or a guarantee. No payment is taken by the website. Payment instructions arrive only after the request is checked; the 12-hour clock starts after deposit confirmation and final scope acceptance.',
   ].join('\n');
   return `mailto:${RESERVATION_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -117,7 +117,7 @@ const timeline = [
 const faqs = [
   ['What is public-build-only?', 'We review the same pages and flows a normal visitor can reach without credentials, admin access, source code, or private infrastructure.'],
   ['What do you not test?', 'No security testing, penetration testing, load testing, privileged access, certification, legal compliance review, or guarantee.'],
-  ['What happens after I request a slot?', CHECKOUT_URL ? 'Send the public URL, launch time, and three critical journeys through the commission intake. We confirm scope, then deliver the evidence pack and walkthrough through Gumroad within 12 hours of acceptance.' : 'Your request is checked against the scope. If accepted, you receive payment instructions; the 12-hour clock starts only after acceptance. No payment is taken by this website.'],
+  ['What happens after I request a slot?', CHECKOUT_URL ? 'Send the public URL, launch time, and three critical journeys through the commission intake. We confirm scope, then deliver the evidence pack and walkthrough through Gumroad within 12 hours of acceptance.' : 'Your request is checked for fit first. If it qualifies, you receive the exact scope and payment instructions. The $44.50 deposit confirms final scope and starts the 12-hour clock. No payment is taken by this website.'],
   ['Can I request a slot privately?', CHECKOUT_URL ? 'Yes. Commission intake and delivery happen through Gumroad.' : 'Yes. The primary fallback opens a private prefilled email draft. A public GitHub request remains available if you prefer transparent issue tracking.'],
   ['Can you retest fixes?', 'Yes. One focused revision is included for fixes to issues found in the original review, if the public build remains accessible.'],
 ];
@@ -172,7 +172,7 @@ export default function App() {
     event.preventDefault();
     if (!validateAndSave()) return;
     if (!CHECKOUT_URL) {
-      setStatus('Intake validated. Opening a private prefilled email draft—review it, then press Send. No payment is due until scope acceptance.');
+      setStatus('Intake validated. Opening a private prefilled email draft—review it, then press Send. No payment is taken here; instructions follow only if the request is in scope.');
       window.location.href = buildEmailReservationUrl(form);
       return;
     }
@@ -294,7 +294,7 @@ export default function App() {
             <article className="price-column">
               <p className="price">$89</p>
               <p><strong>Human review of your public build</strong></p>
-              <p>{CHECKOUT_URL ? '50% Gumroad commission deposit ($44.50) collected at checkout.' : '50% commission deposit ($44.50) is due only after scope acceptance.'}</p>
+              <p>{CHECKOUT_URL ? '50% Gumroad commission deposit ($44.50) collected at checkout.' : 'After a fit check, the $44.50 deposit confirms final scope and starts the 12-hour clock.'}</p>
               <h3>Includes</h3>
               <ul className="plain-list"><li>Twelve normal-user checks</li><li>Timestamped evidence</li><li>P0 / P1 / P2 issue list</li><li>3-minute walkthrough</li><li>One revision within scope</li></ul>
             </article>

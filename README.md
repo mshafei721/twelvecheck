@@ -8,7 +8,7 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Request a launch slot:** https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
 
-The primary public fallback opens a private, prefilled email draft that the visitor must review and send. A public GitHub request remains available as an alternative. Neither route takes payment; a 50% deposit is due only after scope acceptance.
+The primary public fallback opens a private, prefilled email draft that the visitor must review and send. A public GitHub request remains available as an alternative. Neither route takes payment. After a fit check, the 50% deposit confirms final scope and starts the 12-hour clock.
 
 This folder is the operating source of truth for the business. It contains the public landing page, a clearly synthetic sample proof pack, the fulfillment checklist, research ledger, and demand-test operating notes.
 
@@ -30,9 +30,9 @@ Set `VITE_CHECKOUT_URL` to the published Gumroad commission URL before deploying
 ## Current operating contract
 
 - Total commission: $89.
-- Checkout deposit: 50% ($44.50); balance after delivery.
+- Deposit: 50% ($44.50) after preliminary fit confirmation; it confirms final scope. Balance after delivery.
 - Capacity: three active slots.
-- Turnaround: 12 hours after scope acceptance.
+- Turnaround: 12 hours after both deposit confirmation and final scope acceptance.
 - Inputs: public URL, launch time, and three critical user journeys.
 - Deliverables: timestamped evidence, prioritized issue list, three-minute walkthrough, one scoped revision.
 - Exclusions: security, penetration, load, privileged access, certification, legal/compliance review, and guarantees.
