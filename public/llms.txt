@@ -1,0 +1,21 @@
+# TwelveCheck
+
+TwelveCheck is a fixed-scope, human public-build launch review for SaaS founders launching within 72 hours.
+
+## Offer
+
+- Price: USD 89 total commission.
+- Turnaround: within 12 hours after scope acceptance.
+- Deliverables: twelve normal-user checks, timestamped evidence, P0/P1/P2 issue list, short walkthrough, and one scoped revision.
+- Inputs: a public URL, planned launch time, and three critical public journeys.
+- Exclusions: security testing, penetration testing, load testing, privileged access, certification, legal or compliance review, and guarantees.
+- Payment: no payment is due until the public scope is accepted.
+
+## Public resources
+
+- Offer: https://mshafei721.github.io/twelvecheck/
+- Free 12-point SaaS launch checklist: https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html
+- Illustrative sample proof pack: https://mshafei721.github.io/twelvecheck/twelvecheck-sample-proof-pack.html
+- Public slot request: https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
+
+The sample is fictional and demonstrates the deliverable format. It is not a customer result.

@@ -69,6 +69,7 @@ h1 { font-size: clamp(58px, 6.1vw, 104px); line-height: .98; letter-spacing: -4.
 .check-group ol { margin: 0; padding-left: 31px; }
 .check-group li { margin: 0 0 23px; line-height: 1.35; }
 .scope-note { color: var(--orange); border-top: 2px solid var(--orange); margin: 32px 0 0; padding: 19px 4px 0; }
+.checklist-link { margin-top: 18px; }
 
 .sample-disclosure { margin: 22px 0 0 168px; color: var(--gray); font-size: 12px; }
 .proof-grid { display: grid; grid-template-columns: 1.02fr 1fr .94fr; margin-top: 34px; }
@@ -120,6 +121,7 @@ h1 { font-size: clamp(58px, 6.1vw, 104px); line-height: .98; letter-spacing: -4.
 .intake-form small { font-weight: 400; }
 .intake-form input, .intake-form textarea { border: 1px solid var(--ink); border-radius: 0; background: #fff; color: var(--ink); padding: 12px 14px; line-height: 1.4; resize: vertical; }
 .intake-form .button { margin-top: 4px; }
+.intake-form .form-secondary { margin-top: 10px; }
 .form-status { border-left: 4px solid var(--orange); padding: 9px 12px; line-height: 1.4; font-size: 12px; }
 .form-privacy { color: var(--gray); font-size: 10px; line-height: 1.5; }
 .about-column p { line-height: 1.6; }
@@ -132,6 +134,8 @@ h1 { font-size: clamp(58px, 6.1vw, 104px); line-height: .98; letter-spacing: -4.
 .faq-item p { max-width: 900px; margin: 0; padding: 0 8px 22px 46px; line-height: 1.6; }
 .site-footer { max-width: 1600px; margin: 0 auto; padding-top: 28px; padding-bottom: 34px; display: flex; gap: 12px; border-top: 8px solid var(--ink); font-size: 12px; }
 .site-footer span:first-child { font-weight: 800; }
+.site-footer a { margin-left: auto; text-underline-offset: 4px; }
+.site-footer a + a { margin-left: 8px; }
 
 @media (max-width: 1050px) {
   .hero { grid-template-columns: 1fr; }
@@ -166,6 +170,7 @@ h1 { font-size: clamp(58px, 6.1vw, 104px); line-height: .98; letter-spacing: -4.
   .browser-line { overflow: hidden; }
   .browser-line span:last-child { display: none; }
   .site-footer { flex-wrap: wrap; }
+  .site-footer a { margin-left: 0; width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

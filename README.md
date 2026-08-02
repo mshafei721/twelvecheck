@@ -4,9 +4,11 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Live offer:** https://mshafei721.github.io/twelvecheck/
 
+**Free 12-point SaaS launch checklist:** https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html
+
 **Request a launch slot:** https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
 
-The public fallback takes no payment. A 50% deposit is due only after scope acceptance; the site says this explicitly.
+The primary public fallback opens a private, prefilled email draft that the visitor must review and send. A public GitHub request remains available as an alternative. Neither route takes payment; a 50% deposit is due only after scope acceptance.
 
 This folder is the operating source of truth for the business. It contains the public landing page, a clearly synthetic sample proof pack, the fulfillment checklist, research ledger, and demand-test operating notes.
 
@@ -23,7 +25,7 @@ Production check:
 npm run check
 ```
 
-Set `VITE_CHECKOUT_URL` to the published Gumroad commission URL before deploying. The intake form is saved only in the visitor's local browser; payment and commission delivery happen through Gumroad.
+Set `VITE_CHECKOUT_URL` to the published Gumroad commission URL before deploying. Until then, set `VITE_RESERVATION_EMAIL` for private draft handoff and `VITE_RESERVATION_URL` for the public GitHub alternative. The intake form is saved only in the visitor's local browser.
 
 ## Current operating contract
 

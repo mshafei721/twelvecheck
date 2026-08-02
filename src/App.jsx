@@ -1,12 +1,16 @@
 import {useEffect, useState} from 'react';
 
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || '';
-const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request';
+const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new';
+const RESERVATION_EMAIL = import.meta.env.VITE_RESERVATION_EMAIL || 'evanescence.mido@gmail.com';
+
+function publicBuildLabel(url) {
+  try { return new URL(url).hostname; } catch { return 'public build'; }
+}
 
 function buildPrefilledReservationUrl(form) {
-  const requestUrl = new URL('https://github.com/mshafei721/twelvecheck/issues/new');
-  let publicHost = 'public build';
-  try { publicHost = new URL(form.url).hostname; } catch { /* browser validation handles malformed URLs */ }
+  const requestUrl = new URL(RESERVATION_URL);
+  const publicHost = publicBuildLabel(form.url);
   requestUrl.searchParams.set('title', `Launch slot request: ${publicHost}`);
   requestUrl.searchParams.set('body', [
     '## Public build URL',
@@ -22,6 +26,40 @@ function buildPrefilledReservationUrl(form) {
     'I understand this request is public and TwelveCheck is normal-user observation, not security testing, certification, or a guarantee.',
   ].join('\n'));
   return requestUrl.toString();
+}
+
+function buildEmailReservationUrl(form) {
+  const subject = `TwelveCheck launch slot request: ${publicBuildLabel(form.url)}`;
+  const body = [
+    'Hi TwelveCheck,',
+    '',
+    'I would like to request a public-build launch review.',
+    '',
+    'Public build URL',
+    form.url,
+    '',
+    'Planned launch time',
+    form.launch,
+    '',
+    'Three critical public journeys',
+    form.journeys,
+    '',
+    'I understand this is normal-user observation, not security testing, certification, or a guarantee. No payment is due until scope acceptance.',
+  ].join('\n');
+  return `mailto:${RESERVATION_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function validateIntake(form) {
+  if (!form.url.trim() || !form.launch.trim()) return 'Add the public URL and planned launch time before requesting a slot.';
+  try {
+    const parsed = new URL(form.url);
+    if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error('unsupported protocol');
+  } catch {
+    return 'Use a complete public http or https URL.';
+  }
+  const journeyCount = form.journeys.split(/\r?\n/).map(item => item.trim()).filter(Boolean).length;
+  if (journeyCount !== 3) return 'Add exactly three critical journeys, one per line.';
+  return '';
 }
 
 const checkGroups = [
@@ -79,7 +117,8 @@ const timeline = [
 const faqs = [
   ['What is public-build-only?', 'We review the same pages and flows a normal visitor can reach without credentials, admin access, source code, or private infrastructure.'],
   ['What do you not test?', 'No security testing, penetration testing, load testing, privileged access, certification, legal compliance review, or guarantee.'],
-  ['What happens after I request a slot?', CHECKOUT_URL ? 'Send the public URL, launch time, and three critical journeys through the commission intake. We confirm scope, then deliver the evidence pack and walkthrough through Gumroad within 12 hours of acceptance.' : 'Your public request is checked against the scope. If accepted, you receive payment instructions; the 12-hour clock starts only after acceptance. No payment is taken by this website.'],
+  ['What happens after I request a slot?', CHECKOUT_URL ? 'Send the public URL, launch time, and three critical journeys through the commission intake. We confirm scope, then deliver the evidence pack and walkthrough through Gumroad within 12 hours of acceptance.' : 'Your request is checked against the scope. If accepted, you receive payment instructions; the 12-hour clock starts only after acceptance. No payment is taken by this website.'],
+  ['Can I request a slot privately?', CHECKOUT_URL ? 'Yes. Commission intake and delivery happen through Gumroad.' : 'Yes. The primary fallback opens a private prefilled email draft. A public GitHub request remains available if you prefer transparent issue tracking.'],
   ['Can you retest fixes?', 'Yes. One focused revision is included for fixes to issues found in the original review, if the public build remains accessible.'],
 ];
 
@@ -119,21 +158,32 @@ export default function App() {
 
   const scrollToIntake = () => document.querySelector('#intake')?.scrollIntoView({behavior: 'smooth'});
 
-  const submitIntake = (event) => {
-    event.preventDefault();
-    const journeyCount = form.journeys.split(/\r?\n/).map(item => item.trim()).filter(Boolean).length;
-    if (journeyCount < 3) {
-      setStatus('Add three critical journeys, one per line, before checkout.');
-      return;
+  const validateAndSave = () => {
+    const error = validateIntake(form);
+    if (error) {
+      setStatus(error);
+      return false;
     }
     localStorage.setItem('twelvecheck-intake', JSON.stringify(form));
+    return true;
+  };
+
+  const submitIntake = (event) => {
+    event.preventDefault();
+    if (!validateAndSave()) return;
     if (!CHECKOUT_URL) {
-      setStatus('Intake validated. Opening a public GitHub slot request. If GitHub sign-in blocks you and you came from an email, reply to that message with these details instead. No payment is taken until scope acceptance.');
-      window.open(buildPrefilledReservationUrl(form), '_blank', 'noopener,noreferrer');
+      setStatus('Intake validated. Opening a private prefilled email draft—review it, then press Send. No payment is due until scope acceptance.');
+      window.location.href = buildEmailReservationUrl(form);
       return;
     }
     setStatus('Intake saved on this device. Opening Gumroad commission checkout…');
     window.open(CHECKOUT_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const submitPublicRequest = () => {
+    if (!validateAndSave()) return;
+    setStatus('Intake validated. Opening a prefilled public GitHub request. Include public-build information only.');
+    window.open(buildPrefilledReservationUrl(form), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -143,6 +193,7 @@ export default function App() {
         <nav aria-label="Primary navigation">
           <a href="#sample">Sample</a>
           <a href="#scope">Scope</a>
+          <a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Checklist</a>
           <a href="#faq">FAQ</a>
           <button type="button" className="button button-primary nav-cta" onClick={scrollToIntake}>Reserve a slot</button>
         </nav>
@@ -186,6 +237,7 @@ export default function App() {
             ))}
           </div>
           <p className="scope-note">Normal-user observation only. No security testing, load testing, privileged access, certification, or guarantee.</p>
+          <a className="text-link checklist-link" href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Use the free printable 12-point checklist ↗</a>
         </section>
 
         <section id="sample" className="numbered-section page-pad">
@@ -259,16 +311,17 @@ export default function App() {
                 <textarea required rows="5" placeholder={'1. Sign up → Create workspace\n2. Invite teammate\n3. Create first project'} value={form.journeys} onChange={e => setForm({...form, journeys: e.target.value})} aria-describedby="journey-hint"></textarea>
                 <small id="journey-hint">Exactly three lines keeps the review bounded.</small>
               </label>
-              <button className="button button-primary" type="submit">{CHECKOUT_URL ? 'Continue to checkout — $44.50 deposit' : 'Request a slot — no payment yet'}</button>
+              <button className="button button-primary" type="submit">{CHECKOUT_URL ? 'Continue to checkout — $44.50 deposit' : 'Email a private slot request'}</button>
+              {!CHECKOUT_URL && <button className="button button-secondary form-secondary" type="button" onClick={submitPublicRequest}>Use a public GitHub request instead</button>}
               {status && <p className="form-status" role="status">{status}</p>}
-              {!CHECKOUT_URL && <p className="form-privacy">Fallback requests open as public GitHub issues. If you arrived from an outreach email, you can reply to it with the three fields above—no GitHub account needed. Include public-build information only—never credentials, private URLs, customer data, or secrets.</p>}
+              {!CHECKOUT_URL && <p className="form-privacy">The primary fallback opens a private email draft in your own mail app; you still review and send it. The optional GitHub request is public. Include public-build information only—never credentials, private URLs, customer data, or secrets.</p>}
             </form>
 
             <article className="about-column">
               <h3>About the review</h3>
               <p>Human review of your live, public build. We follow twelve normal-user checks and capture evidence along the way.</p>
               <p>This is not a security audit, pen test, certification, or guarantee.</p>
-              <CheckoutButton onMissingCheckout={() => setStatus('Opening the public slot-request form. No payment is taken until scope acceptance.')}>{CHECKOUT_URL ? 'Reserve my slot' : 'Request my slot'}</CheckoutButton>
+              {CHECKOUT_URL ? <CheckoutButton>Reserve my slot</CheckoutButton> : <button type="button" className="button button-primary" onClick={scrollToIntake}>Fill a private request</button>}
               <p>{CHECKOUT_URL ? 'If the public build is inaccessible or outside scope, the commission is rejected and the deposit refunded.' : 'If the public build is inaccessible or outside scope, the request is declined. No payment is taken.'}</p>
             </article>
           </div>
@@ -292,7 +345,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span></footer>
+      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span><a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Free checklist</a><a href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`}>Sample pack</a></footer>
     </>
   );
 }

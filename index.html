@@ -13,6 +13,7 @@
     <meta property="og:image:alt" content="TwelveCheck launch-audit sample report and headline" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://mshafei721.github.io/twelvecheck/" />
+    <link rel="alternate" type="text/plain" href="%BASE_URL%llms.txt" title="TwelveCheck service summary" />
     <link rel="icon" href="%BASE_URL%favicon.svg" />
     <title>TwelveCheck — catch launch blockers before launch</title>
     <script type="application/ld+json">
@@ -21,14 +22,46 @@
         "@type": "Service",
         "name": "TwelveCheck Launch Audit",
         "description": "A human, public-build review for SaaS founders launching in the next 72 hours, with twelve normal-user checks and timestamped evidence.",
-        "provider": {"@type": "Organization", "name": "TwelveCheck"},
+        "provider": {
+          "@type": "Organization",
+          "name": "TwelveCheck",
+          "email": "evanescence.mido@gmail.com"
+        },
         "url": "https://mshafei721.github.io/twelvecheck/",
+        "subjectOf": {
+          "@type": "Article",
+          "name": "A 12-point public-build SaaS launch checklist",
+          "url": "https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html"
+        },
         "offers": {
           "@type": "Offer",
           "price": "89",
           "priceCurrency": "USD",
           "availability": "https://schema.org/LimitedAvailability"
         }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is public-build-only?",
+            "acceptedAnswer": {"@type": "Answer", "text": "TwelveCheck reviews pages and flows a normal visitor can reach without credentials, admin access, source code, or private infrastructure."}
+          },
+          {
+            "@type": "Question",
+            "name": "What does TwelveCheck not test?",
+            "acceptedAnswer": {"@type": "Answer", "text": "TwelveCheck does not perform security testing, penetration testing, load testing, privileged access, certification, legal compliance review, or guarantees."}
+          },
+          {
+            "@type": "Question",
+            "name": "Can a founder request a slot privately?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes. Until checkout is connected, the primary fallback opens a private prefilled email draft. A public GitHub request is also available."}
+          }
+        ]
       }
     </script>
   </head>

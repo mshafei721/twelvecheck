@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff3d0a">
+  <meta name="description" content="A free, printable 12-point SaaS launch checklist covering first contact, core journey, pricing, confirmations, mobile, and obvious accessibility blockers.">
+  <meta property="og:title" content="Free 12-point SaaS launch checklist | TwelveCheck">
+  <meta property="og:description" content="Run twelve normal-user checks before launch and capture evidence your team can act on.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html">
+  <meta property="og:image" content="https://mshafei721.github.io/twelvecheck/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html">
+  <link rel="icon" href="favicon.svg">
+  <title>12-point SaaS launch checklist for founders | TwelveCheck</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "A 12-point public-build SaaS launch checklist",
+      "description": "A printable normal-user checklist for SaaS founders preparing to launch.",
+      "datePublished": "2026-08-02",
+      "dateModified": "2026-08-02",
+      "author": {"@type": "Organization", "name": "TwelveCheck"},
+      "publisher": {"@type": "Organization", "name": "TwelveCheck"},
+      "mainEntityOfPage": "https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html"
+    }
+  </script>
+  <style>
+    :root { --ink:#111; --orange:#ff3d0a; --wash:#fff0e8; --gray:#606060; --display:"Arial Narrow","Roboto Condensed","Helvetica Neue",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    html { color:var(--ink); background:#fff; font-family:"Courier New",Courier,monospace; }
+    body { margin:0; min-width:320px; }
+    a { color:inherit; }
+    a:focus-visible, button:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+    header { min-height:76px; padding:0 clamp(20px,4vw,58px); display:flex; align-items:center; justify-content:space-between; gap:24px; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+    .brand { font-family:var(--display); font-size:30px; font-weight:950; letter-spacing:-1.5px; text-decoration:none; }
+    header nav { display:flex; align-items:center; gap:24px; font-size:13px; font-weight:800; }
+    .button { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:12px 20px; border:2px solid var(--orange); background:var(--orange); color:#fff; font-weight:800; text-decoration:none; }
+    main { max-width:1240px; margin:0 auto; padding:clamp(44px,7vw,94px) clamp(20px,4vw,58px) 80px; }
+    .intro { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr); gap:clamp(34px,7vw,92px); padding-bottom:clamp(44px,6vw,72px); }
+    h1,h2,h3,.step { font-family:var(--display); }
+    h1 { margin:0; max-width:800px; font-size:clamp(54px,7vw,98px); line-height:.94; letter-spacing:-4px; }
+    .intro-copy > p { max-width:720px; margin:28px 0 0; font-size:clamp(16px,1.5vw,20px); line-height:1.55; }
+    .how { align-self:end; border:2px solid var(--ink); padding:24px; }
+    .how h2 { margin:0 0 16px; font-size:26px; }
+    .how ol { margin:0; padding-left:24px; line-height:1.65; }
+    .how p { margin:18px 0 0; color:var(--orange); font-size:12px; line-height:1.5; }
+    .group { border-top:3px solid var(--ink); padding:42px 0 8px; }
+    .group-heading { display:grid; grid-template-columns:90px 1fr; gap:18px; align-items:end; margin-bottom:24px; }
+    .step { font-size:62px; line-height:.85; font-weight:950; letter-spacing:-3px; }
+    .group h2 { margin:0; padding-bottom:10px; border-bottom:1px solid var(--ink); font-size:clamp(30px,4vw,54px); letter-spacing:-1.5px; }
+    .checks { list-style:none; margin:0; padding:0; }
+    .check { display:grid; grid-template-columns:34px minmax(180px,.8fr) minmax(260px,1.25fr) minmax(220px,1fr); gap:22px; padding:25px 0; border-bottom:1px solid #999; align-items:start; }
+    .check input { width:20px; height:20px; margin:3px 0 0; accent-color:var(--orange); }
+    .check h3 { margin:0; font-size:20px; line-height:1.1; }
+    .check p { margin:0; font-size:13px; line-height:1.55; }
+    .check .failure { color:var(--gray); }
+    .check .failure strong { color:var(--orange); }
+    .evidence { margin:38px 0 0; padding:22px; border:2px solid var(--orange); background:var(--wash); }
+    .evidence h2 { margin:0 0 12px; font-size:28px; }
+    .evidence p { margin:0; line-height:1.6; }
+    .cta { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; margin-top:52px; padding:34px 0; border-top:8px solid var(--ink); border-bottom:2px solid var(--ink); }
+    .cta h2 { margin:0 0 8px; font-size:clamp(30px,4vw,50px); letter-spacing:-1px; }
+    .cta p { margin:0; line-height:1.5; }
+    footer { max-width:1240px; margin:0 auto; padding:24px clamp(20px,4vw,58px) 36px; display:flex; flex-wrap:wrap; gap:12px 24px; font-size:11px; }
+    footer a:first-of-type { margin-left:auto; }
+    @media (max-width:800px) {
+      header nav a:not(.button) { display:none; }
+      .intro { grid-template-columns:1fr; }
+      .how { align-self:auto; }
+      .check { grid-template-columns:28px 1fr; gap:10px 14px; }
+      .check p { grid-column:2; }
+      .cta { grid-template-columns:1fr; }
+      .cta .button { width:100%; }
+      footer a:first-of-type { margin-left:0; }
+    }
+    @media print {
+      header, .cta, footer { display:none; }
+      main { max-width:none; padding:0; }
+      .intro { padding-bottom:26px; }
+      .how { break-inside:avoid; }
+      .group { padding-top:24px; break-inside:avoid; }
+      .check { padding:12px 0; }
+      h1 { font-size:54px; }
+      .group h2 { font-size:32px; }
+      .step { font-size:42px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">TwelveCheck</a>
+    <nav aria-label="Checklist navigation">
+      <a href="twelvecheck-sample-proof-pack.html">Sample pack</a>
+      <a class="button" href="./#intake">Request a review — $89</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="intro-copy">
+        <h1>A 12-point SaaS launch checklist.</h1>
+        <p>Run these checks as a normal visitor, on the public build you are actually launching. Record what happened, where it happened, and when. Evidence is more useful than a vague pass/fail score.</p>
+      </div>
+      <aside class="how">
+        <h2>How to use it</h2>
+        <ol>
+          <li>Open a private browser window.</li>
+          <li>Test desktop and a common phone width.</li>
+          <li>Capture the URL, timestamp, and visible result.</li>
+          <li>Fix blockers before polishing P2 friction.</li>
+        </ol>
+        <p>Public paths only. Do not test security, load, private systems, or privileged access.</p>
+      </aside>
+    </section>
+
+    <section class="group">
+      <div class="group-heading"><span class="step">01</span><h2>First contact</h2></div>
+      <ol class="checks">
+        <li class="check"><input type="checkbox" aria-label="Check 1 complete"><h3>Value is obvious in five seconds</h3><p>Load the homepage cold. Can a visitor state who it is for, what it does, and why it matters without scrolling?</p><p class="failure"><strong>Failure signal:</strong> the description fits several unrelated products.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 2 complete"><h3>Headline matches the product</h3><p>Compare the headline with the actual first product screen, current release, or documented workflow.</p><p class="failure"><strong>Failure signal:</strong> launch copy describes an older product or a feature the build does not expose.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 3 complete"><h3>Primary action is unambiguous</h3><p>Follow the dominant button from the first viewport. Confirm its label predicts the destination and next step.</p><p class="failure"><strong>Failure signal:</strong> “Get started” opens a demo, waitlist, generic page, or dead anchor.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 4 complete"><h3>Mobile first screen holds</h3><p>Test a 390-pixel-wide viewport. Check the headline, main action, navigation, consent layers, and horizontal overflow.</p><p class="failure"><strong>Failure signal:</strong> the action is clipped, covered, or pushed below avoidable chrome.</p></li>
+      </ol>
+    </section>
+
+    <section class="group">
+      <div class="group-heading"><span class="step">02</span><h2>Core journey</h2></div>
+      <ol class="checks" start="5">
+        <li class="check"><input type="checkbox" aria-label="Check 5 complete"><h3>Sign up or log in works</h3><p>Use the public entry point and follow only ordinary account actions. Note redirects, validation, loading, and confirmation.</p><p class="failure"><strong>Failure signal:</strong> a successful action returns to the same state with no explanation.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 6 complete"><h3>First key action succeeds</h3><p>Complete the one action that demonstrates the product's promised value, using safe test data.</p><p class="failure"><strong>Failure signal:</strong> the user reaches a dashboard but cannot find or finish the first meaningful task.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 7 complete"><h3>Recovery path is clear</h3><p>Trigger one ordinary validation error or empty result. Confirm the message explains what changed and what to do next.</p><p class="failure"><strong>Failure signal:</strong> a generic error, silent reset, or disabled action strands the visitor.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 8 complete"><h3>Empty states guide forward</h3><p>Inspect new-account, no-result, and zero-item states encountered naturally during the journey.</p><p class="failure"><strong>Failure signal:</strong> the page names what is missing but provides no next action or example.</p></li>
+      </ol>
+    </section>
+
+    <section class="group">
+      <div class="group-heading"><span class="step">03</span><h2>Launch truth</h2></div>
+      <ol class="checks" start="9">
+        <li class="check"><input type="checkbox" aria-label="Check 9 complete"><h3>Pricing path is consistent</h3><p>Compare homepage, pricing, checkout, FAQ, and terms wording for price, billing period, limits, trial, and cancellation.</p><p class="failure"><strong>Failure signal:</strong> a buyer cannot tell which public promise governs the purchase.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 10 complete"><h3>Launch promise matches the build</h3><p>Check the launch listing and campaign copy against the current homepage and reachable product paths.</p><p class="failure"><strong>Failure signal:</strong> product names, scope, integrations, or availability drift between surfaces.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 11 complete"><h3>Confirmations explain next steps</h3><p>After signup, request, purchase, or submission, confirm the user sees status, ownership, timing, and the next action.</p><p class="failure"><strong>Failure signal:</strong> success looks identical to failure or creates an unexplained waiting period.</p></li>
+        <li class="check"><input type="checkbox" aria-label="Check 12 complete"><h3>Obvious accessibility blockers are absent</h3><p>Keyboard through the public journey, zoom to 200%, inspect visible labels, and check meaningful image alternatives.</p><p class="failure"><strong>Failure signal:</strong> focus disappears, controls have no name, or essential content becomes unreachable.</p></li>
+      </ol>
+    </section>
+
+    <aside class="evidence">
+      <h2>Capture enough evidence to reproduce it.</h2>
+      <p>For every finding, keep the public URL, UTC timestamp, viewport, numbered journey step, expected result, observed result, and one screenshot. Label impact as P0 only when the launch journey is blocked; use P1 for material conversion friction and P2 for clarity or polish.</p>
+    </aside>
+
+    <section class="cta">
+      <div><h2>Want a second pair of eyes?</h2><p>TwelveCheck runs these twelve public-build checks, returns timestamped evidence and a prioritized issue list, and delivers a short walkthrough for $89.</p></div>
+      <a class="button" href="./#intake">Request a 12-hour review</a>
+    </section>
+  </main>
+  <footer><strong>TwelveCheck</strong><span>Observed release evidence, not assurance.</span><a href="./">Offer</a><a href="twelvecheck-sample-proof-pack.html">Sample pack</a></footer>
+</body>
+</html>
