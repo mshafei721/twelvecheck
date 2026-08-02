@@ -25,6 +25,11 @@ $entryPaths = foreach ($entryName in $entryNames) {
   (Resolve-Path -LiteralPath $entryPath).Path
 }
 
+& node (Join-Path $repositoryRoot 'scripts\validate-evidence-kit.mjs')
+if ($LASTEXITCODE -ne 0) {
+  throw 'Evidence Kit validation failed.'
+}
+
 New-Item -ItemType Directory -Path $artifactRoot -Force | Out-Null
 if (Test-Path -LiteralPath $artifactPath) {
   Remove-Item -LiteralPath $artifactPath -Force

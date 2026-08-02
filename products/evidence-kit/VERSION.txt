@@ -1,4 +1,0 @@
-TwelveCheck Evidence Kit
-Version 1.0.0
-Released 2026-08-02
-

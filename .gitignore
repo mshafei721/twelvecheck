@@ -5,6 +5,7 @@ output/playwright/
 output/evidence-kit-*.png
 output/render-evidence-*.html
 output/product/
+products/evidence-kit/
 .env
 .env.*
 !.env.example
