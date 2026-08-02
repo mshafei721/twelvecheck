@@ -29,8 +29,9 @@ if (!app.includes('deposit confirms final scope and starts the 12-hour clock')) 
 if (!app.includes('VITE_MINI_CHECKOUT_URL')) throw new Error('Mini-review checkout configuration missing');
 if (!checklist.includes('A 12-point SaaS launch checklist.')) throw new Error('Indexable launch checklist missing');
 if (!checklist.includes('twelvecheck-launch-checklist-carousel.pdf')) throw new Error('Downloadable carousel link missing');
+if (!index.includes('twelvecheck-free-guide') || !checklist.includes('twelvecheck-free-guide')) throw new Error('Free Gumroad guide conversion path missing');
 if (carousel.length < 50000 || carousel.subarray(0, 4).toString() !== '%PDF') throw new Error('Downloadable carousel PDF is invalid');
 if (!sitemap.includes('saas-launch-checklist.html')) throw new Error('Checklist missing from sitemap');
 if (!index.includes('twelvecheck-mini') || !index.includes('"price": "39"')) throw new Error('Mini-review structured offer missing');
 
-console.log('TwelveCheck validation passed: offer copy, scope, responsive UI, exact intake validation, private/public handoffs, checklist, downloadable carousel, and sitemap present.');
+console.log('TwelveCheck validation passed: offer copy, scope, responsive UI, exact intake validation, private/public handoffs, checklist, free Gumroad guide, downloadable carousel, and sitemap present.');

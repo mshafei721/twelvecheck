@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || '';
 const MINI_CHECKOUT_URL = import.meta.env.VITE_MINI_CHECKOUT_URL || 'https://midoevanescence.gumroad.com/l/twelvecheck-mini';
+const FREE_GUIDE_URL = 'https://midoevanescence.gumroad.com/l/twelvecheck-free-guide';
 const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new';
 const RESERVATION_EMAIL = import.meta.env.VITE_RESERVATION_EMAIL || 'evanescence.mido@gmail.com';
 
@@ -208,6 +209,7 @@ export default function App() {
             <p className="lede">A human, public-build review for SaaS founders launching in the next 72 hours. Twelve normal-user checks. Evidence, not a score.</p>
             <button type="button" className="button button-primary hero-button" onClick={scrollToIntake}>Reserve a launch slot — $89</button>
             <a className="button button-secondary hero-button" href="#sample">See the sample proof pack</a>
+            <a className="text-link hero-guide-link" href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Get the free 8-page field guide — $0+ ↗</a>
             <p className="micro">12-hour turnaround <span>·</span> Public build only <span>·</span> No security claims</p>
           </div>
 
@@ -239,6 +241,7 @@ export default function App() {
           </div>
           <p className="scope-note">Normal-user observation only. No security testing, load testing, privileged access, certification, or guarantee.</p>
           <a className="text-link checklist-link" href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Use the free printable 12-point checklist ↗</a>
+          <a className="text-link checklist-link guide-link" href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Download the free 8-page Gumroad guide — $0+ ↗</a>
         </section>
 
         <section id="sample" className="numbered-section page-pad">
@@ -358,7 +361,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span><a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Free checklist</a><a href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`}>Sample pack</a></footer>
+      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span><a href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Free guide — $0+</a><a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Printable checklist</a><a href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`}>Sample pack</a></footer>
     </>
   );
 }

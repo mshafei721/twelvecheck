@@ -15,6 +15,7 @@ TwelveCheck is a fixed-scope, human public-build launch review for SaaS founders
 
 - Offer: https://mshafei721.github.io/twelvecheck/
 - Free 12-point SaaS launch checklist: https://mshafei721.github.io/twelvecheck/saas-launch-checklist.html
+- Free 8-page Gumroad field guide ($0+, $5 suggested): https://midoevanescence.gumroad.com/l/twelvecheck-free-guide
 - Illustrative sample proof pack: https://mshafei721.github.io/twelvecheck/twelvecheck-sample-proof-pack.html
 - Public slot request: https://github.com/mshafei721/twelvecheck/issues/new?template=launch-slot.yml&title=Launch+slot+request
 

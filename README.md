@@ -8,6 +8,8 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Downloadable 8-page field guide:** https://mshafei721.github.io/twelvecheck/twelvecheck-launch-checklist-carousel.pdf
 
+**Free Gumroad field guide ($0+, $5 suggested):** https://midoevanescence.gumroad.com/l/twelvecheck-free-guide
+
 **Commission checkout:** https://midoevanescence.gumroad.com/l/twelvecheck
 
 **Mini review:** https://midoevanescence.gumroad.com/l/twelvecheck-mini
