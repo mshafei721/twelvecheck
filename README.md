@@ -1,6 +1,6 @@
 # TwelveCheck
 
-TwelveCheck is a productized, human public-build launch review for SaaS founders launching within 72 hours. The offer is deliberately narrow: twelve normal-user checks, timestamped evidence, P0/P1/P2 findings, and a short walkthrough for $89.
+TwelveCheck is a launch-evidence product ladder for SaaS founders: a reusable offline Evidence Kit for self-review, plus bounded human public-build reviews. Every tier centers on twelve normal-user checks, reproducible evidence, and P0/P1/P2 prioritization—not security or compliance claims.
 
 **Live offer:** https://mshafei721.github.io/twelvecheck/
 
@@ -10,11 +10,13 @@ TwelveCheck is a productized, human public-build launch review for SaaS founders
 
 **Free Gumroad field guide ($0+, $5 suggested):** https://midoevanescence.gumroad.com/l/twelvecheck-free-guide
 
+**Instant Evidence Kit ($9):** https://midoevanescence.gumroad.com/l/twelvecheck-evidence-kit
+
 **Commission checkout:** https://midoevanescence.gumroad.com/l/twelvecheck
 
 **Mini review:** https://midoevanescence.gumroad.com/l/twelvecheck-mini
 
-The production site validates and saves the three-journey intake in the visitor's browser, then opens the Gumroad commission checkout. Gumroad collects a 50% deposit ($44.50); the balance is charged after completion. The 12-hour clock starts only after deposit confirmation and final scope acceptance.
+The self-serve Evidence Kit is a single offline HTML workbook plus reusable templates. It makes no network request and stores work only in the purchaser's browser. The production site also validates and saves the three-journey human-review intake in the visitor's browser, then opens the Gumroad commission checkout. Gumroad collects a 50% deposit ($44.50); the balance is charged after completion. The 12-hour clock starts only after deposit confirmation and final scope acceptance.
 
 This folder is the operating source of truth for the business. It contains the public landing page, a clearly synthetic sample proof pack, the fulfillment checklist, research ledger, and demand-test operating notes.
 
@@ -31,7 +33,7 @@ Production check:
 npm run check
 ```
 
-`VITE_CHECKOUT_URL` is set for the GitHub Pages build in `.github/workflows/pages.yml`. For an unconnected local build, `VITE_RESERVATION_EMAIL` provides the private draft handoff and `VITE_RESERVATION_URL` provides the public GitHub alternative. The intake form is saved only in the visitor's local browser.
+`VITE_KIT_URL`, `VITE_MINI_CHECKOUT_URL`, and `VITE_CHECKOUT_URL` configure the three paid tiers. For an unconnected local human-review build, `VITE_RESERVATION_EMAIL` provides the private draft handoff and `VITE_RESERVATION_URL` provides the public GitHub alternative. The intake form is saved only in the visitor's local browser.
 
 ## Current operating contract
 

@@ -1,0 +1,20 @@
+TWELVECHECK EVIDENCE KIT — LICENSE 1.0
+
+Copyright 2026. All rights reserved.
+
+The purchaser may:
+
+1. use and modify the included files for the purchaser's own products;
+2. use the included files while delivering services to the purchaser's own clients;
+3. export and share completed reports and evidence logs created for those products or clients; and
+4. make reasonable backup copies for the purchaser's own use.
+
+The purchaser may not:
+
+1. resell, sublicense, publish, upload, or distribute the blank kit or substantially similar derivative templates;
+2. share the source kit with another person, team, community, or marketplace as a reusable resource;
+3. remove the TwelveCheck name and sell the kit as a competing template product; or
+4. represent the kit as security testing, penetration testing, compliance review, certification, legal advice, or a guarantee.
+
+The kit is provided as-is without warranties. The purchaser is responsible for authorization, safe test data, interpretation, remediation, and launch decisions. Do not place credentials, secrets, private URLs, customer data, regulated information, or other sensitive material in the workbook.
+

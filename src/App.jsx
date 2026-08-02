@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || '';
 const MINI_CHECKOUT_URL = import.meta.env.VITE_MINI_CHECKOUT_URL || 'https://midoevanescence.gumroad.com/l/twelvecheck-mini';
+const KIT_URL = import.meta.env.VITE_KIT_URL || 'https://midoevanescence.gumroad.com/l/twelvecheck-evidence-kit';
 const FREE_GUIDE_URL = 'https://midoevanescence.gumroad.com/l/twelvecheck-free-guide';
 const RESERVATION_URL = import.meta.env.VITE_RESERVATION_URL || 'https://github.com/mshafei721/twelvecheck/issues/new';
 const RESERVATION_EMAIL = import.meta.env.VITE_RESERVATION_EMAIL || 'evanescence.mido@gmail.com';
@@ -197,20 +198,20 @@ export default function App() {
           <a href="#scope">Scope</a>
           <a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Checklist</a>
           <a href="#faq">FAQ</a>
-          <button type="button" className="button button-primary nav-cta" onClick={scrollToIntake}>Reserve a slot</button>
+          <a className="button button-primary nav-cta" href={KIT_URL} target="_blank" rel="noreferrer">Evidence Kit — $9</a>
         </nav>
       </header>
 
       <main id="top">
         <section className="hero page-pad" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="eyebrow">12-hour public-build preflight</p>
-            <h1 id="hero-title">Catch the launch blockers your own eyes stopped seeing.</h1>
-            <p className="lede">A human, public-build review for SaaS founders launching in the next 72 hours. Twelve normal-user checks. Evidence, not a score.</p>
-            <button type="button" className="button button-primary hero-button" onClick={scrollToIntake}>Reserve a launch slot — $89</button>
-            <a className="button button-secondary hero-button" href="#sample">See the sample proof pack</a>
+            <p className="eyebrow">Offline evidence kit + human launch reviews</p>
+            <h1 id="hero-title">Catch launch blockers before your buyers do.</h1>
+            <p className="lede">Run twelve normal-user SaaS launch checks in a local workbook, keep reproducible evidence, or hand the review to a human. Evidence, not a score.</p>
+            <a className="button button-primary hero-button" href={KIT_URL} target="_blank" rel="noreferrer">Get the instant Evidence Kit — $9</a>
+            <button type="button" className="button button-secondary hero-button" onClick={scrollToIntake}>Book a human review — from $39</button>
             <a className="text-link hero-guide-link" href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Get the free 8-page field guide — $0+ ↗</a>
-            <p className="micro">12-hour turnaround <span>·</span> Public build only <span>·</span> No security claims</p>
+            <p className="micro">Instant download <span>·</span> Local-only workbook <span>·</span> No security claims</p>
           </div>
 
           <article className="report-card" aria-label="Synthetic TwelveCheck sample verdict">
@@ -293,7 +294,26 @@ export default function App() {
         </section>
 
         <section id="intake" className="numbered-section page-pad">
-          <SectionHeading number="03">Three slots. One revision. No scope drift.</SectionHeading>
+          <SectionHeading number="03">Start with proof. Escalate when it matters.</SectionHeading>
+          <article className="kit-offer" aria-labelledby="kit-offer-title">
+            <div className="kit-copy">
+              <p className="kit-kicker">Instant download · Offline · V1.0</p>
+              <h3 id="kit-offer-title">Run the checks. Keep the proof.</h3>
+              <p>The reusable Evidence Kit turns the free checklist into an auditable workflow. Capture what happened, where, when, and why it matters—then export a report someone else can reproduce.</p>
+              <ul className="kit-features">
+                <li>12 preloaded checks</li>
+                <li>CSV, JSON, and Markdown exports</li>
+                <li>P0 / P1 / P2 priority summary</li>
+                <li>Finding and walkthrough templates</li>
+              </ul>
+            </div>
+            <div className="kit-buy">
+              <div className="kit-price-block" aria-label="TwelveCheck Evidence Kit pricing"><strong>$9</strong><span>one-time · yours to reuse</span></div>
+              <a className="button button-primary" href={KIT_URL} target="_blank" rel="noreferrer">Get the Evidence Kit</a>
+              <small>No account inside the workbook. No upload. No tracking.</small>
+            </div>
+          </article>
+          <p className="service-note">Want a person to run it? Choose a bounded review below.</p>
           <article className="mini-offer" aria-labelledby="mini-offer-title">
             <div>
               <h3 id="mini-offer-title">One journey. Four checks. Four hours.</h3>
@@ -361,7 +381,7 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span><a href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Free guide — $0+</a><a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Printable checklist</a><a href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`}>Sample pack</a></footer>
+      <footer className="site-footer page-pad"><span>TwelveCheck</span><span>·</span><span>observed release evidence, not assurance.</span><a href={KIT_URL} target="_blank" rel="noreferrer">Evidence Kit — $9</a><a href={FREE_GUIDE_URL} target="_blank" rel="noreferrer">Free guide — $0+</a><a href={`${import.meta.env.BASE_URL}saas-launch-checklist.html`}>Printable checklist</a><a href={`${import.meta.env.BASE_URL}twelvecheck-sample-proof-pack.html`}>Sample pack</a></footer>
     </>
   );
 }

@@ -2,6 +2,9 @@ node_modules/
 dist/
 .playwright-cli/
 output/playwright/
+output/evidence-kit-*.png
+output/render-evidence-*.html
+output/product/
 .env
 .env.*
 !.env.example
